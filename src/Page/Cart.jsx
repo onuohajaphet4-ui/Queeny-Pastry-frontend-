@@ -28,7 +28,7 @@ const Cart = () => {
       try {
         const token = localStorage.getItem("token");
 
-        const res = await axios.get("http://localhost:3000/api/cart", {
+        const res = await axios.get("https://queeny-pastry.onrender.com/api/cart", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -55,7 +55,7 @@ const Cart = () => {
      if (!confirm) return;
       const token = localStorage.getItem("token")
      try {
-        await axios.delete (`http://localhost:3000/api/cart/delete/${_id}`,
+        await axios.delete (`https://queeny-pastry.onrender.com/api/cart/delete/${_id}`,
           {
         headers: {
           Authorization: `Bearer ${token}`
@@ -93,7 +93,7 @@ const Cart = () => {
           : Math.max(1, item.quantity - 1);
 
       // 🔥 send to backend
-      axios.put(`http://localhost:3000/api/cart/${id}`,
+      axios.put(`https://queeny-pastry.onrender.com/api/cart/${id}`,
          { quantity: newQty });
 
       // 🔥 update frontend immediately

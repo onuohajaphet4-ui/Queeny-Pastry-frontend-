@@ -18,7 +18,7 @@ export default function Orders() {
        
         try {
             setLoading(true)
-            const res = await  axios.get("http://localhost:3000/api/order/customer",{
+            const res = await  axios.get("https://queeny-pastry.onrender.com/api/order/customer",{
                headers: {
               "Authorization": `Bearer ${token}`
              }
@@ -51,7 +51,7 @@ export default function Orders() {
     const token = localStorage.getItem("token");
 
     await axios.put(
-      `http://localhost:3000/api/order/${id}`,
+      `https://queeny-pastry.onrender.com/api/order/${id}`,
       { status },
       {
         headers: {

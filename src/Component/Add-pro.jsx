@@ -42,7 +42,7 @@ const Form = ({ imageUrl }) => {
     };
 
     try {
-      await axios.post("http://localhost:3000/api/product", payload);
+      await axios.post("https://queeny-pastry.onrender.com/api/product", payload);
       alert("Product created ");
     } catch (err) {
       setError("Failed to create product");

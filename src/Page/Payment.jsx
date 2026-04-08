@@ -24,7 +24,7 @@ export default function Payment() {
         const token = localStorage.getItem("token");
 
 const cartRes = await axios.get(
-  "http://localhost:3000/api/cart",
+  "https://queeny-pastry.onrender.com/api/cart",
   {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ const cartRes = await axios.get(
          
        
         const res = await axios.post(
-          "http://localhost:3000/api/payment/initialize",
+          "https://queeny-pastry.onrender.com/api/payment/initialize",
           {
             email: delivery.email,
             cartItems,

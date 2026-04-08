@@ -16,7 +16,7 @@ export default function Orders() {
         const token = localStorage.getItem("token");
 
         const res = await axios.get(
-          "http://localhost:3000/api/order",
+          "https://queeny-pastry.onrender.com/api/order",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -41,7 +41,7 @@ export default function Orders() {
      if (!confirm) return;
      
      try {
-        await axios.delete (`http://localhost:3000/api/order/delete/${_id}`)
+        await axios.delete (`https://queeny-pastry.onrender.com/api/order/delete/${_id}`)
         alert ('deleted succesfully')
      } catch (error) {
       console.error(error)
@@ -55,7 +55,7 @@ export default function Orders() {
     const token = localStorage.getItem("token");
 
     await axios.put(
-      `http://localhost:3000/api/order/admin/status/${id}`,
+      `https://queeny-pastry.onrender.com/api/order/admin/status/${id}`,
       { status },
       {
         headers: {

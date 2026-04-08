@@ -15,7 +15,7 @@ const Saved = () => {
   try {
     const token = localStorage.getItem("token")
 
-    const res = await fetch("http://localhost:3000/api/favorite", {
+    const res = await fetch("https://queeny-pastry.onrender.com/api/favorite", {
       headers: {
         "Authorization": `Bearer ${token}`
       }
@@ -43,7 +43,7 @@ useEffect(() => {
       if (!confirm) return;
       
       try {
-         await axios.delete (`http://localhost:3000/api/favorite/${_id}`,{
+         await axios.delete (`https://queeny-pastry.onrender.com/api/favorite/${_id}`,{
           headers: {
         "Authorization": `Bearer ${token}`
       }

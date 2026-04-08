@@ -32,7 +32,7 @@ const Login = () => {
     setError("");
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/user/login",
+        "https://queeny-pastry.onrender.com/api/user/login",
         formData
       );
 

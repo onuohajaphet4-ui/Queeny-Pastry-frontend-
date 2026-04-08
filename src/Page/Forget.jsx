@@ -35,7 +35,7 @@ const Login = () => {
 
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/user/reset-password",
+      "https://queeny-pastry.onrender.com/api/user/reset-password",
       { email: formData.email }
     );
 

@@ -28,7 +28,7 @@ const Upload = ({ setImageUrl }) =>{
     formData.append("image", file);
 
     try {
-     const res = await axios.post("http://localhost:3000/api/product/image", formData);
+     const res = await axios.post("https://queeny-pastry.onrender.com/api/product/image", formData);
      console.log("Image :" , res.data)
       if (res?.data?.imageUrl && typeof setImageUrl === "function") {
   setImageUrl(res.data.imageUrl);

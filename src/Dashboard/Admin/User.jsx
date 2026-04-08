@@ -21,7 +21,7 @@ const UsersList = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [user , setUser] = useState(null)
-  const api = "http://localhost:3000/api/user";
+  const api = "https://queeny-pastry.onrender.com/api/user";
 
   useEffect(() => {
     const fetchUsers = async () => {

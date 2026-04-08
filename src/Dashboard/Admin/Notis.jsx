@@ -22,7 +22,7 @@ const CreateNotification = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "http://localhost:3000/api/notisfication",
+        "https://queeny-pastry.onrender.com/api/notisfication",
         { message },
         {
           headers: {
@@ -47,7 +47,7 @@ const CreateNotification = () => {
         const token = localStorage.getItem("token");
   
         const res = await axios.get(
-          "http://localhost:3000/api/notisfication",
+          "https://queeny-pastry.onrender.com/api/notisfication",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -76,7 +76,7 @@ const CreateNotification = () => {
             if (!confirm) return;
             
             try {
-               await axios.delete (`http://localhost:3000/api/favorite/${_id}`,{
+               await axios.delete (`https://queeny-pastry.onrender.com/api/favorite/${_id}`,{
                 headers: {
               "Authorization": `Bearer ${token}`
             }

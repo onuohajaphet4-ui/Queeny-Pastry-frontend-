@@ -9,7 +9,7 @@ const Quickstat = () => {
   const fetchStats = async () => {
     const token = localStorage.getItem("token")
     try {
-      const res = await fetch('http://localhost:3000/api/dash/customer' ,{
+      const res = await fetch('https://queeny-pastry.onrender.com/api/dash/customer' ,{
       headers: {
         "Authorization": `Bearer ${token}`
       }

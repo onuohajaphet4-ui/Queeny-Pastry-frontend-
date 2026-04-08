@@ -33,7 +33,7 @@ const UpdateUser = () => {
 
     try {
        const res = await 
-       axios.put(`http://localhost:3000/api/product/update/${id}`,payload)
+       axios.put(`https://queeny-pastry.onrender.com/api/product/update/${id}`,payload)
        console.log(res.data.products)
        setLoading(false)
        alert ('Edit  succesfully')

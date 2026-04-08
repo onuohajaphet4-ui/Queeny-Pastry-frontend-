@@ -29,7 +29,7 @@ export default function Delivery() {
 
   try {
     // check if email exists
-    const res = await axios.post("http://localhost:3000/api/user/check-email", {
+    const res = await axios.post("https://queeny-pastry.onrender.com/api/user/check-email", {
       email: form.email
     });
 

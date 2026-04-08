@@ -40,7 +40,7 @@ const RegistrationScreen = () => {
 
     try {
       await axios.post(
-        "http://localhost:3000/api/user",
+        "https://queeny-pastry.onrender.com/api/user",
         formData
       );
       alert("Registration successful!.");

@@ -31,7 +31,7 @@ const Info = () => {
 
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/user/${id}`
+          `https://queeny-pastry.onrender.com/api/user/${id}`
         );
         // IMPORTANT: your backend sends { users }
         setUser(res.data.users);

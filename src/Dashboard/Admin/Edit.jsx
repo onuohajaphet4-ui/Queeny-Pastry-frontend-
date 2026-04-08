@@ -36,7 +36,7 @@ const UpdateUser = () => {
 
     try {
        const res = await 
-       axios.put(`http://localhost:3000/api/user/update/${id}`,payload)
+       axios.put(`https://queeny-pastry.onrender.com/api/user/update/${id}`,payload)
        console.log(res.data.users)
        setLoading(false)
        alert ('Profile Updated succesfully')

@@ -27,7 +27,7 @@ useEffect(() => {
   const fetchStats = async () => {
     const token = localStorage.getItem("token")
     try {
-      const res = await fetch(`http://localhost:3000/api/dash/customer?period=${period}` ,{
+      const res = await fetch(`https://queeny-pastry.onrender.com/api/dash/customer?period=${period}` ,{
       headers: {
         "Authorization": `Bearer ${token}`
       }

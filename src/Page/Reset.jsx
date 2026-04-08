@@ -34,7 +34,7 @@ const Login = () => {
     setError("");
     try {
       const res = await axios.post(
-        `https://yati-perfume-backend.onrender.com/api/users/reset-password/${token}`,
+        `https://queeny-pastry.onrender.com/api/user/reset-password/${token}`,
         formData
       );
 

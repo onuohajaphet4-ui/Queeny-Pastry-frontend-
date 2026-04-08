@@ -20,7 +20,7 @@ export default function PaymentSuccess() {
 
         // ✅ VERIFY PAYMENT
         const verifyRes = await axios.get(
-          `http://localhost:3000/api/payment/verify/${reference}`,
+          `https://queeny-pastry.onrender.com/api/payment/verify/${reference}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ export default function PaymentSuccess() {
 
         // ✅ CREATE ORDER
         const orderRes = await axios.post(
-          "http://localhost:3000/api/order/create",
+          "https://queeny-pastry.onrender.com/api/order/create",
           { reference },
           {
             headers: {
@@ -64,7 +64,7 @@ export default function PaymentSuccess() {
       setLoading(true);
       const token = localStorage.getItem("token");
 
-      const res = await axios.get("http://localhost:3000/api/order", {
+      const res = await axios.get("https://queeny-pastry.onrender.com/api/order", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

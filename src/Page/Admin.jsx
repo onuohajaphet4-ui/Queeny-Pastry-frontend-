@@ -26,7 +26,7 @@ const Admin = () => {
 useEffect(() => {
   const fetchStats = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/dash?period=${period}`);
+      const res = await fetch(`https://queeny-pastry.onrender.com/api/dash?period=${period}`);
       const data = await res.json();
       setStats(data);
     } catch (err) {

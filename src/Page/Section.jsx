@@ -24,7 +24,7 @@ const Home = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-      axios.get(`http://localhost:3000/api/product?section=${section}`)
+      axios.get(`https://queeny-pastry.onrender.com/api/product?section=${section}`)
       .then((res) => {
         setData(res.data.products)
          setLoading(false)
@@ -46,7 +46,7 @@ const Home = () => {
   }
 
   try {
-    await axios.post("http://localhost:3000/api/cart",
+    await axios.post("https://queeny-pastry.onrender.com/api/cart",
       {
          productId: info._id,
       },
@@ -77,7 +77,7 @@ const Home = () => {
     return
   }
 
-    const res = await fetch("http://localhost:3000/api/favorite", {
+    const res = await fetch("https://queeny-pastry.onrender.com/api/favorite", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
