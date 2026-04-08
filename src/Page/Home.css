@@ -1,0 +1,295 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  display: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;       
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hello h4 {
+  margin: 0;
+  font-size: 14px;
+  color: rgb(51, 47, 47);
+}
+
+.bran-input {
+  display: none;
+  width: 203%;
+  margin:2%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  outline:none; 
+  box-shadow: 1px 2px 6px rgba(7, 7, 7, 0.363);
+  margin-bottom: 5%;
+  margin-left: 9%;
+   padding-left: 50px;
+
+}
+
+.admin-bran-input {
+  display: none;
+  width: 190%;
+  margin:2%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  outline:none; 
+  box-shadow: 1px 2px 6px rgba(7, 7, 7, 0.363);
+  margin-bottom: 5%;
+  margin-left: 14%;
+   padding-left: 50px;
+
+}
+
+.bran-inputt {
+  display: block;
+  /* width: 35%; */
+  margin:2%;
+  outline: none;
+  font-size: 16px;
+        margin: 10px 0px;
+        padding: 13px;
+        width: 70%;
+        border-radius: 20px;
+        border: none;
+        padding-left: 70px;
+  box-shadow: 1px 2px 6px rgba(7, 7, 7, 0.363);
+
+}
+.bran-inputtt {
+  display: block;
+  /* width: 35%; */
+  margin-left: 15%;
+  margin-top: 7%;
+  outline: none;
+  font-size: 16px;
+       
+        padding: 15px;
+        width: 178%;
+        border-radius: 20px;
+        border: none;
+        padding-left: 70px;
+  box-shadow: 1px 2px 6px rgba(7, 7, 7, 0.363);
+
+}
+.admin-bran-inputtt {
+  display: block;
+  /* width: 35%; */
+  margin-left: 15%;
+  margin-top: 7%;
+  outline: none;
+  font-size: 16px;
+        padding: 15px;
+        width: 198%;
+        border-radius: 20px;
+        border: none;
+        padding-left: 70px;
+  box-shadow: 1px 2px 6px rgba(7, 7, 7, 0.363);
+
+}
+
+.input-wrapper{
+  
+    position: relative;
+    width: 45%;
+
+}
+
+.input-icon{
+    position: absolute;
+    top: 30%;
+    left: 35px;
+    pointer-events: none;
+}
+.input-icoon{
+    position: absolute;
+    top: 33%;
+    left: 120px;
+    pointer-events: none;
+}
+
+.input-wrapperr{
+  display:none;
+    position: relative;
+    width: 45%;
+
+}
+
+
+
+.input-iccon{
+    position: absolute;
+    top: 30%;
+    left: 35px;
+    pointer-events: none;
+}
+.admin-input-icoon{
+    position: absolute;
+    top: 33%;
+    left: 130px;
+    pointer-events: none;
+}
+
+.admin-input-iccon{
+    position: absolute;
+    top: 33%;
+    left: 55px;
+    pointer-events: none;
+}
+
+
+
+.hello span {
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+
+}
+
+.hello p {
+  margin: 0;
+  font-size: 15px;
+  color: rgb(51, 47, 47);
+}
+
+.iconss {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iicon {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#9c690a;
+  margin-left: 80%;
+}
+
+.notification {
+  position: relative;
+}
+
+.notification::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  background: red;
+  border-radius: 50%;
+}
+
+.fflex{
+  display: flex;
+  margin-left: 40px;
+}
+
+.fff{
+  display: flex;
+  gap: 150px;
+  img{
+    width: 50px;
+  height:50px;
+  margin-top: 2%;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  }
+}
+@media(max-width:600px){
+  .input-wrapper{
+    display: none;
+  }
+
+  .input-wrapperr{
+    display: block;
+  }
+
+  .fflex{
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .fff{
+    gap: 50px;
+    margin-left: 10%;
+    margin-top: 20px;
+  }
+    .navbar{
+        display: block;
+        display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+
+        
+    }
+
+    .bran-inputt {
+  display:none;
+  width: 86%;
+  margin: 0 auto 20px;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  margin-top: 4%;
+  
+}
+
+.bran-input{
+  display: block;
+  margin-bottom: 5%;
+}
+
+.admin-bran-input{
+  
+  display: block;
+  margin-bottom: 5%;
+
+}
+
+}
+
+@media(max-width:450px){
+  .fff{
+    gap: 40px;
+    margin-left: 3%;
+  }
+} 

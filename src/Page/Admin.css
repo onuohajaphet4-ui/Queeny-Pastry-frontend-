@@ -1,0 +1,168 @@
+.admin-layout{
+    display: flex;
+}
+.admin-content{
+    padding: 25px;
+    width: 100%;
+    min-height: 100vh;
+    background: #f4f6f9;
+
+   
+
+}
+
+.admincontent-intro{
+    font-family: Arial, Helvetica, sans-serif;
+    p{
+        margin-top: 1%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+    }
+}
+
+.admincontent-second{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    
+}
+
+.admincontent-card{
+    border: 1px solid grey;
+    margin-top: 2%;
+    padding: 20px;
+    width: 30%;
+    border-radius: 10px;
+
+    h2{
+        margin-top: 5px;
+    }
+
+    h4{
+        margin-top: 13px;
+    }
+    
+}
+
+.admin-icon{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.adm-h3{
+    margin: 2% 1% 0% 0%;
+}
+
+
+.filters{
+    margin-top: 2%;
+    margin-left: 60%;
+    gap: 1px;
+    align-items: center;
+
+    .filter-btn{
+        padding: 5px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+  transition: 0.3s ease;
+    }
+
+
+.active-btn {
+  background-color:blue;
+ padding: 10px;
+        font-weight: bold;
+        margin-left: 10px;
+        cursor: pointer;
+  transition: 0.3s ease;
+}
+}
+
+@media(max-width:600px){
+        .logout{
+            button{
+                font-size: 9px;
+                  margin-left: 84%;
+            }
+        }
+
+        .black{
+            span{
+                font-size: 15px;
+            }
+        }
+ .admin-layout{
+    flex-direction: column;
+}
+
+/* RIGHT SIDE */
+.admin-layout{
+    display:block;
+}
+
+.admin-content{
+    display: none;
+}
+
+.admincontent-second{
+    display: flex;
+    
+    gap: 12px;
+    flex-wrap: wrap;
+    
+}
+
+.admincontent-card{
+    margin-top: 4%;
+    width: 48%;
+    border-radius: 10px;
+
+     h2{
+        margin-top: 5px;
+        font-size: 20px;
+    }
+
+    h4{
+        margin-top: 13px;
+        font-size: 15px;
+    }
+
+    
+}
+
+.admincontent-intro{
+    font-family: Arial, Helvetica, sans-serif;
+    p{
+        margin-top: 2%;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:100;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+}
+.adm-h3{
+    font-size: 18px;
+}
+
+.filters{
+    margin-left: 0%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+   
+
+    .filter-btn{
+        padding: 5px;
+        font-weight: bold;
+        margin-left: 5px;
+        cursor: pointer;
+  transition: 0.3s ease;
+     margin-top: 2%;
+    }
+}
+}
+
+

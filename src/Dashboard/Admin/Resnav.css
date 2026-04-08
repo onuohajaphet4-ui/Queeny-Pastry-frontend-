@@ -1,0 +1,77 @@
+.resnav{
+    width: 100%;
+     background-color: #f7f6f6;
+     position: relative;
+     padding-bottom: 17%;
+    .in{
+        padding: 10px ;
+        background-color: white;
+        box-shadow: 10px 4px 12px rgba(7, 7, 7, 0.541);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500;
+        position: fixed;
+     z-index: 1000;
+    top: 0%;
+    left: 0; 
+    width: 100%; 
+    margin-bottom: 3%;
+    }
+
+    .hello{
+        display: flex;
+        padding: 5%;
+        padding-top: 18%;
+
+        div{
+            margin-left: 3%;
+            h4{
+                color:rgb(51, 47, 47);
+            }
+            span{
+                font-weight: bold;
+               
+            }
+        }
+    }
+
+    .card{
+        padding: 6%;
+        padding-bottom: 1%;
+        background-color: white;
+        margin: 3% 5%;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+        .card-flex{
+            display: flex;
+             justify-content: space-between;
+             margin-bottom: 9%;
+
+            div{
+                display: flex;
+                
+            }
+        }
+    }
+
+    h5{
+        padding-left: 6%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    button{
+        margin-left: 6%;
+        margin-right: 5%;
+        width: 89%;
+        margin-top: 3%;
+        padding: 3%;
+        border: none;
+        background-color:#9c690a;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        border-radius: 10px;
+
+    }
+}

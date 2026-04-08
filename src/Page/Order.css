@@ -1,0 +1,161 @@
+.orders-page {
+  padding: 20px;
+  margin: 3% 5%;
+}
+
+.orders-page h2 {
+  margin-bottom: 15px;
+}
+
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filters button.active {
+  background: gold;
+  color: black;
+}
+
+
+.order-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+ 
+}
+
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.status.processing {
+  background: #fff3cd;
+  color: orange;
+}
+
+.status.shipped {
+  background: #d0ebff;
+  color: blue;
+}
+
+.status.delivered {
+  background: #d4edda;
+  color: green;
+}
+
+
+.date {
+  font-size: 12px;
+  color: gray;
+  margin: 5px 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-info h5 {
+  margin: 0;
+  font-size: 14px;
+}
+
+
+.total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-order{
+   margin-left: 90%;
+   margin-top: 2%;
+
+   
+    background-color: inherit;
+    border: none;
+  
+}
+
+
+.track-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  background: gold;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.order-status{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    button{
+        padding: 7px;
+        border-radius: 5px;
+        box-shadow:  0 4px 12px rgba(0, 0, 0, 2);
+        border: none;
+        font-weight: bold;
+    }
+}
+
+.order-user{
+  div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+
+    p{
+      font-weight: 600;
+      color: rgb(51, 47, 47);
+    }
+
+  }
+}
+
+@media(max-wdith:600px){
+  .orders-page{
+      margin: 3% 0%;
+  }
+}

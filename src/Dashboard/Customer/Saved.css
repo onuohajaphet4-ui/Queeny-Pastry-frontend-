@@ -1,0 +1,30 @@
+.revievw{
+    margin-top: 2%;
+    margin-bottom: 4%;
+    margin-left: 4%;
+    h2{
+        font-weight: bold;
+    }
+    p{
+        color: gray;
+        margin-top: 1%;
+        font-weight: bold;
+    }
+
+}
+@media(max-width:600px){
+.revievw{
+    margin-top: 14%;
+    margin-bottom: 4%;
+    margin-left: 3%;
+    display: none;
+    h2{
+        font-weight: bold;
+    }
+    p{
+        color: gray;
+        margin-top: 1%;
+        font-weight: bold;
+    }
+
+}}

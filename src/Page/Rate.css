@@ -1,0 +1,48 @@
+.reviw{
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.411);
+   border-radius: 10px;
+   margin: 2% 30%;
+   padding: 20px;
+   margin-bottom: 10%;
+
+    input{
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        outline: none;
+    }
+
+    h2{
+       text-align: center;
+       margin-bottom: 10px;
+    }
+
+    select{
+        width: 80%;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    button{
+        margin-left: 10px;
+       
+        padding: 5px;
+        border: none;
+    }
+
+    button:hover{
+        background-color:rgb(197, 84, 84);
+    }
+}
+@media(max-width:600px){
+    .reviw{
+       margin: 25% 7%;
+    
+
+       select{
+        width: 77%;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+    }
+}

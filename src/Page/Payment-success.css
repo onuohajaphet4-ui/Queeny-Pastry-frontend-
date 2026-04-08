@@ -1,0 +1,99 @@
+.success-container {
+  text-align: center;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  background: #4CAF50;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.check-icon {
+  color: white;
+  font-size: 50px;
+}
+
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: rgb(51, 47, 47);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+.order-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.order-item div {
+  flex: 1;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.total strong {
+  color: #f4a000;
+  font-size: 20px;
+}
+
+
+.primary-btn {
+  background: #f4a000;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  display: block;
+  font-weight: bold;
+}
+
+.secondary-btn {
+  border: 2px solid #f4a000;
+  color: #f4a000;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  display: block;
+  background: transparent;
+  font-weight: bold;
+}
