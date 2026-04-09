@@ -3,10 +3,14 @@ import axios from "axios";
 import "./Notification.css";
 import { FaBell } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
+import {
+  CircularProgress,
+} from "@mui/material";
 
 const Notification = () => {
   const [notifications, setNotifications] = useState([]);
-
+  const [loading , setLoading] = useState(true)
+m
   const fetchNotifications = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -30,6 +34,9 @@ const Notification = () => {
     fetchNotifications();
   }, []);
 
+  if (loading) return <CircularProgress  sx={{
+           margin : '15% 50%', color:'red'
+      }}  />
   
 
   return (

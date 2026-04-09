@@ -7,23 +7,32 @@ import {
 } from "@mui/material";
 import {Link} from 'react-router-dom'
 import Quickstat from './Dashboard'
+import {
+  CircularProgress,
+} from "@mui/material";
+
 const Resnav = () => {
     const [user , setUser] = useState(null)
     const [stats, setStats] = useState({})
+    const [loading , setLoading] = useState(true)
         
+
         useEffect(() => {
           const savedUser  = 
           localStorage.getItem('user')
           if (savedUser){
             setUser(JSON.parse(savedUser))
-          }
+          }setLoading(false)
         }, [])
 
-         const handleLogout = () => {
-            
+ const handleLogout = () => {
   localStorage.removeItem("token")
+  localStorage.removeItem("user")
+  setLoading(false)
   navigate("/")
 }
+
+
         
   return (
     <div className='resnav'>
@@ -108,7 +117,12 @@ const Resnav = () => {
 
         <div>
             <button onClick={handleLogout}>
-              <FiLogOut size={18} style={{marginLeft:'10px'}}/>  Sign Out
+              {loading ? (
+                                            <CircularProgress size={24} sx={{ color: "#fff" }} />
+                                          ) : ( <>
+                                            <FiLogOut size={18} style={{marginLeft:'10px'}}/>Sign Out
+                                            </>
+                                          )}
             </button>
         </div>
       
