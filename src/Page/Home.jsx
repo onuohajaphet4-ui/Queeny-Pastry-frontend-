@@ -22,7 +22,7 @@ const Home = () => {
       const [search, setSearch] = useState("");
   
       useEffect(() => {
-        axios.get("http://localhost:3000/api/product")
+        axios.get("https://queeny-pastry.onrender.com/api/product")
         .then((res) => {
           setData(res.data.products)
            setLoading(false)
@@ -43,7 +43,7 @@ const Home = () => {
     }
   
     try {
-      await axios.post("http://localhost:3000/api/cart",
+      await axios.post("https://queeny-pastry.onrender.com/api/cart",
         {
            productId: info._id,
         },

@@ -25,7 +25,7 @@ const Product = () => {
       const [search, setSearch] = useState("");
   
       useEffect(() => {
-        axios.get("http://localhost:3000/api/product")
+        axios.get("https://queeny-pastry.onrender.com/api/product")
         .then((res) => {
           setData(res.data.products)
            setLoading(false)
@@ -44,7 +44,7 @@ const Product = () => {
    if (!confirm) return;
    
    try {
-      await axios.delete (`http://localhost:3000/api/product/delete/${_id}`)
+      await axios.delete (`https://queeny-pastry.onrender.com/api/product/delete/${_id}`)
   
       console.log(data)
       alert ('deleted succesfully')
