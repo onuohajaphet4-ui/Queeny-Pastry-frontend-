@@ -48,7 +48,7 @@ const Navv = () => {
 
          <Link to='/orderr' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FiShoppingCart size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>My Order</li></Link> 
          <Link to='/saved' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FiHeart size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Saved Item</li></Link> 
-         <Link to='/shopp' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FaBell size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Notification</li></Link> 
+         <Link to='/notification' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FaBell size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Notification</li></Link> 
          <Link to={`/info/${user?.id}`} style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FiUser size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>My Information</li></Link>
          <Link to='/forgot' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FaLock size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Change Password</li></Link>
          <button onClick={handleLogout}><FiLogOut size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Sign Out</button>

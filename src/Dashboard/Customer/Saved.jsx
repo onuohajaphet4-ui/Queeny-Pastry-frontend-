@@ -23,6 +23,7 @@ const Saved = () => {
 
     const data = await res.json()
     setFavorites(data)
+    console.log(data)
 
 
   } catch (error) {
@@ -91,18 +92,20 @@ useEffect(() => {
         <div className="product-card">
             {favorites.map((fav) => (
      <div className="gal-card" key={fav._id}>
-      <img   src={fav.product.imageUrl}alt=""/>
+      <img   src={fav.product?.imageUrl}alt=""/>
 
       <h4 className="vin-h3">
-             {fav.product.brand}
+            
             </h4>
           
 
           <h2 className='shop-name'>
-            {fav.product.name}
+            {fav.product?.name}
           </h2>
 
-             <h2 className='price'>${fav.product.price}</h2>
+             <h2 className='price'>₦{fav.product?.price}</h2>
+
+             
 
       <button onClick={() =>  deleteFav(fav._id)} className="btn-fave">
          <FiTrash2  size={20} color='red' className="cartt-icon" />
@@ -117,7 +120,7 @@ useEffect(() => {
      ))} 
         </div>
 
-        <button className='buton' ><FaShoppingCart color='#9c690a' size={18} style={{marginRight:'6px'}}/> Add to Cart</button>
+        
         </div>
     </div>
   )

@@ -58,7 +58,7 @@ const Resnav = () => {
 
             <div className='card-flex'>
                 <div>
-                    <FiHeart size={20} color="pink" style={{marginRight:'20px'}}/>
+                    <FiHeart size={20} color=" #9c690a" style={{marginRight:'20px'}}/>
                 <h4>Saved Item</h4>
                 </div>
                 <Link to='/saved' style={{textDecoration:'none' , color:'inherit'}}><FaArrowRight size={13} color='rgb(51, 47, 47)'/></Link>
@@ -69,7 +69,7 @@ const Resnav = () => {
                     <FaBell size={20} color="#9c690a" style={{marginRight:'20px'}}/>
                 <h4>Notification</h4>
                 </div>
-                <FaArrowRight size={13} color='rgb(51, 47, 47)'/>
+                <Link to='/notification' style={{textDecoration:'none' , color:'inherit'}}><FaArrowRight size={13} color='rgb(51, 47, 47)'/></Link>
             </div>
         </div>
 

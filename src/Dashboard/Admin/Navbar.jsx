@@ -51,7 +51,7 @@ const Navv = () => {
          <Link to='/order' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FiShoppingCart size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Orders</li></Link> 
          <Link to='/shop' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FiShoppingBag size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Shop</li></Link> 
          <Link to='/users' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FiUsers size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Users</li></Link>
-         <Link to='/notification' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FaBell size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Users</li></Link>
+         <Link to='/notification' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FaBell size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Notification</li></Link>
          <Link to={`/info/${user?.id}`} style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FiUser size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>My Information</li></Link>
          <Link to='/forgot' style={{textDecoration:'none' , color:'inherit'}}><li className='main-li'><FaLock size={20} color='white' style={{marginTop:'15px', marginRight:'10px'}}/>Change Password</li></Link>
 

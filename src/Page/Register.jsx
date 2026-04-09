@@ -14,6 +14,7 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import {motion} from 'framer-motion'
 
 import {FcGoogle} from "react-icons/fc"
 
@@ -75,6 +76,12 @@ const RegistrationScreen = () => {
       }}
     >
 
+      <motion.div
+                     initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+
         
             
               <Box
@@ -93,7 +100,7 @@ const RegistrationScreen = () => {
         sx={{
           position: "center",
           zIndex: 1,
-          width: "360px",
+          width: "330px",
           color: "#fff",
           display: "flex",
           flexDirection: "column",
@@ -261,7 +268,7 @@ const RegistrationScreen = () => {
         
       </Box>
 
-      
+      </motion.div>
     </Box>
   );
 };

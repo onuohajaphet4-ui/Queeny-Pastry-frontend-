@@ -89,7 +89,7 @@
         margin: 5% 1%;
         border-radius: 10px;
         border: 1px solid grey;
-        margin-bottom: 17%;
+        margin-bottom: 25%;
 
         .ship-card{
         border: 1px solid rgba(133, 129, 129, 0.767);
@@ -98,7 +98,7 @@
         border-radius: 10px;
 
        .button{
-            margin-left: 56%;
+            margin-left: 47%;
             background-color: green;
             color: white;
             outline: none;
@@ -112,9 +112,10 @@
         }
         img{
             width: 100px;
-            margin: 1% 10%;
+            margin: 1% 3%;
             height: 100px;
             margin-top: 3%;
+            border-radius: 10px;
         }
 
         h4{

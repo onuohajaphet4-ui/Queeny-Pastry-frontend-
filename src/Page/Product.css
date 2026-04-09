@@ -73,6 +73,10 @@
 
 }
 
+.sort{
+    margin-top: 5%;
+}
+
 .buton{
         padding: 10px 30px;
         border:1px solid black;
@@ -99,6 +103,9 @@
 }
 
 @media(max-width:600px){
+    .sort{
+        margin-left: 30%;
+    }
     .product-p{
         flex-direction: column;
         display: block;

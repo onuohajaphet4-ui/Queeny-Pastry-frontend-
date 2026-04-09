@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import  video from '../assets/video-perfume.mp4'
 import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion'
 import {FcGoogle} from "react-icons/fc"
 
 
@@ -71,6 +72,12 @@ const Login = () => {
     >
       
        
+       <motion.div
+               initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+
 
     
       <Box
@@ -87,7 +94,7 @@ const Login = () => {
         sx={{
           position: "relative",
           zIndex: 1,
-          width: "355px",
+          width: "330px",
           p: 4,
           color: "#fff",
           background: "white",
@@ -206,7 +213,7 @@ const Login = () => {
          sx={{
             py: 1.5,
             mt: 1,
-            width:300,
+            width:270,
             borderRadius: "12px",
             textTransform: "none",
             fontWeight: "bold",
@@ -221,7 +228,7 @@ const Login = () => {
        
       </Box>
 
-       
+       </motion.div>
     </Box>
   );
 };

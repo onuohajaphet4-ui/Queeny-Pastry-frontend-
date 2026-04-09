@@ -13,6 +13,8 @@ import {Link} from 'react-router-dom'
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 import { FiHeart } from 'react-icons/fi';
+import Filter from '../Dashboard/Customer/Filter'
+import {motion} from 'framer-motion'
 
 const Home = () => {
     const { section } = useParams();
@@ -21,10 +23,12 @@ const Home = () => {
     const { id } = useParams();
     const [message, setMessage] = useState("")
     const [addedId, setAddedId] = useState([])
+    const [search, setSearch] = useState([])
+    const [sort, setSort] = useState("");
     const navigate = useNavigate()
 
     useEffect(() => {
-      axios.get(`https://queeny-pastry.onrender.com/api/product?section=${section}`)
+      axios.get(`https://queeny-pastry.onrender.com/api/product?section=${section}${sort ? `&sort=${sort}` : "" }`)
       .then((res) => {
         setData(res.data.products)
          setLoading(false)
@@ -32,7 +36,7 @@ const Home = () => {
       }).catch((error) => {
          console.error (error?.response?.data?.message || "Request failed")
       })
-    }, [])
+    }, [section, sort])
 
     const addToCart = async (info) => {
 
@@ -101,6 +105,11 @@ const Home = () => {
   }
 }
 
+const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
+
+   const filteredCards = data.filter((b) =>
+    b.name.toLowerCase().includes(search)
+  );
 
      if (loading) return <CircularProgress  sx={{
          margin : '15% 50%', color:'red'
@@ -111,7 +120,12 @@ const Home = () => {
     <div>
       <Nav/>
 
-      
+       {message && (
+        <div className='toast'>
+               {message}
+        </div>
+
+      )}
       <div className="navbar">
               <div className="logo">
                       <img src={logo} alt="" />
@@ -142,6 +156,7 @@ const Home = () => {
       <div className="input-wrapperr">
                                <FaSearch  style={{marginTop:'px', color:'rgb(51, 47, 47)',marginRight:'10px'}}  className='input-iccon'/>
                                <input
+                               onChange={handleSearch}
                              className="bran-input"
                              type="text"
                              placeholder="Search 'Cakes', 'pastries, 'small chops', 'snacks'........"
@@ -151,6 +166,7 @@ const Home = () => {
               <div className="input-wrapper">
                <FaSearch  style={{marginTop:'px', color:'rgb(51, 47, 47)',marginRight:'10px'}}  className='input-icoon'/>
                <input
+               onChange={handleSearch}
              className="bran-inputtt"
              type="text"
              placeholder="Search 'Cakes', 'pastries, 'small chops', 'snacks'........"
@@ -158,8 +174,18 @@ const Home = () => {
               </div>
 
 
+        <div className='sort'>
+               <Filter sort={sort} setSort={setSort} />
+
+             </div>
+
+   <motion.div
+                           initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
       <div className='product-p'>
-        {data.map((info) => (
+        {filteredCards.map((info) => (
         <div key ={info._id} className="product-card"> 
           
           <div>
@@ -174,20 +200,23 @@ const Home = () => {
             {info.name}
           </h2>
 
-             <h2 className='price'>${info.price}</h2>
+             <h2 className='price'>₦{info.price}</h2>
 
   
 
 
-          <button className='button' onClick={() => addToCart(info)}><FaShoppingCart color='#9c690a' size={18} style={{marginRight:'6px'}}/> Add to cart</button>
+          <button className='button' onClick={() => addToCart(info)}><FaShoppingCart color='#9c690a' size={18} style={{marginRight:'6px'}}/> {addedId.includes(info._id) ? "Added ✓✓" : "Add to Cart"}</button>
 
           <button onClick={() => handleFavorite(info._id)} className='btn-fave'><FiHeart className='de-icon' size={23} style={{marginLeft:'90%'}}/></button>
             
         
         </div>
-      ))}
+      ))} {filteredCards.length === 0 && (
+        <p style={{ textAlign: "center", color: "gray" }}>No Product Found</p>
+      )}
 
     </div>
+    </motion.div>
 
 
     </div>

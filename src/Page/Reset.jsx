@@ -13,7 +13,7 @@ import {
 import { Visibility, VisibilityOff, EmailOutlined, LockOutlined } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-
+import {motion} from 'framer-motion'
 
 
 const Login = () => {
@@ -61,6 +61,11 @@ const Login = () => {
         overflow: "hidden",
       }}
     >
+      <motion.div
+                           initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                              animate={{ opacity: 1, y: 0, scale: 1 }}
+                              transition={{ duration: 0.8, ease: "easeOut" }}
+                  >
       
        
        
@@ -78,7 +83,7 @@ const Login = () => {
         sx={{
           position: "relative",
           zIndex: 1,
-          width: "360px",
+          width: "330px",
           p: 4,
           color: "#fff",
           background: "white",
@@ -162,7 +167,7 @@ const Login = () => {
        
       </Box>
 
-       
+       </motion.div>
     </Box>
   );
 };

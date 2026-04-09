@@ -25,6 +25,7 @@ export default function Orders() {
         );
 
         setOrders(res.data.orders || []);
+        console.log(res.data.orders || [])
       } catch (err) {
         console.log(err);
       } finally {
@@ -64,7 +65,7 @@ export default function Orders() {
       }
     );
 
-    // ✅ Update UI instantly
+    
     setOrders((prev) =>
       prev.map((order) =>
         order._id === id ? { ...order, status } : order

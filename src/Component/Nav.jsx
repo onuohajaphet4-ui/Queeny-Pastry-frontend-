@@ -66,7 +66,7 @@ const Home = () => {
            <Link to='/' style={{textDecoration:'none', color:'inherit'}}> <li> <FaHome size={20} className='iconb'/><span>Home</span></li></Link>
            <Link to='/product' style={{textDecoration:'none', color:'inherit'}}> <li> <FaStore size={20} className='iconb'/><span>Product</span></li></Link>
            <Link to='/cart' style={{textDecoration:'none', color:'inherit'}}> <li><FaShoppingCart size={20} className='iconb'/><span>Cart</span></li></Link>
-           <li className='iconb' onClick={handleAccountClick} style={{cursor: "pointer"}}><FaUser size={20} className='icon'/><span>Account</span></li>
+           <li  onClick={handleAccountClick} style={{cursor: "pointer"}}><FaUser size={20} className='iconb'/><span>Account</span></li>
         
         </ul>
 

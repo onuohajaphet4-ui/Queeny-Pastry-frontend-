@@ -18,7 +18,7 @@ export default function PaymentSuccess() {
       try {
         const token = localStorage.getItem("token");
 
-        // ✅ VERIFY PAYMENT
+       
         const verifyRes = await axios.get(
           `https://queeny-pastry.onrender.com/api/payment/verify/${reference}`,
           {
@@ -33,7 +33,7 @@ export default function PaymentSuccess() {
           return;
         }
 
-        // ✅ CREATE ORDER
+        
         const orderRes = await axios.post(
           "https://queeny-pastry.onrender.com/api/order/create",
           { reference },
@@ -58,7 +58,7 @@ export default function PaymentSuccess() {
     if (reference) verify();
   }, []);
 
-  // ✅ FETCH ORDERS
+ 
   const fetchOrder = async () => {
     try {
       setLoading(true);
@@ -71,9 +71,9 @@ export default function PaymentSuccess() {
       });
     console.log(res.data.orders);
        const orders = res.data.orders;
-    // ✅ Get latest order (last in array)
-    const latestOrder = orders[orders.length - 1];
-    setData(latestOrder); // now it's a single object, not array
+    
+    const latestOrder = orders[0];
+    setData(latestOrder); 
 
 
       
@@ -88,11 +88,11 @@ export default function PaymentSuccess() {
 
   useEffect(() => {
     if (success) {
-      fetchOrder(); // ✅ only fetch after success
+      fetchOrder(); 
     }
   }, [success]);
 
-  // ✅ UI
+  
   return (
     <div>
       {success ? (
@@ -112,10 +112,10 @@ export default function PaymentSuccess() {
 
        {data?.items?.map((item) => (
   <div className="order-item" key={item._id}>
-    <img src={item.productId?.imageUrl} alt="product" />
+    <img src={item?.productId?.imageUrl} alt="product" />
 
     <div>
-      <h4>{item.productId?.name}</h4>
+      <h4>{item?.productId?.name}</h4>
       <p>Quantity: {item.quantity}</p>
     </div>
 
