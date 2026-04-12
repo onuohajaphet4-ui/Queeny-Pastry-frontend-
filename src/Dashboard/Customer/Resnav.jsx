@@ -5,7 +5,7 @@ import './Resnav.css'
 import {
   Avatar,
 } from "@mui/material";
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import Quickstat from './Dashboard'
 import {
   CircularProgress,
@@ -15,6 +15,7 @@ const Resnav = () => {
     const [user , setUser] = useState(null)
     const [stats, setStats] = useState({})
     const [loading , setLoading] = useState(true)
+     const navigate = useNavigate();
         
         useEffect(() => {
           const savedUser  = 
@@ -38,8 +39,9 @@ const handleLogout = () => {
         </div>
 
         <div className="hello">
-            <Avatar sx={{ bgcolor: "#9c690a" }}>
-                    {user? user.names : "Guest" [0].toUpperCase()}
+            <Avatar sx={{ bgcolor: "#9c690a" ,fontWeight:'bold'}}>
+                   
+                    {user?.names[0].toUpperCase()}
             </Avatar>
 
             <div>
@@ -74,7 +76,7 @@ const handleLogout = () => {
                     <FaBell size={20} color="#9c690a" style={{marginRight:'20px'}}/>
                 <h4>Notification</h4>
                 </div>
-                <Link to='/notification' style={{textDecoration:'none' , color:'inherit'}}><FaArrowRight size={13} color='rgb(51, 47, 47)'/></Link>
+                <Link to='/notis' style={{textDecoration:'none' , color:'inherit'}}><FaArrowRight size={13} color='rgb(51, 47, 47)'/></Link>
             </div>
         </div>
 

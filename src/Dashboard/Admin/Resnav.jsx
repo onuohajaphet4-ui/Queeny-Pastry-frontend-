@@ -5,7 +5,7 @@ import './Resnav.css'
 import {
   Avatar,
 } from "@mui/material";
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import Quickstat from './Dashboard'
 import {
   CircularProgress,
@@ -15,6 +15,7 @@ const Resnav = () => {
     const [user , setUser] = useState(null)
     const [stats, setStats] = useState({})
     const [loading , setLoading] = useState(true)
+    const navigate = useNavigate();
         
 
         useEffect(() => {
@@ -41,7 +42,7 @@ const Resnav = () => {
         </div>
 
         <div className="hello">
-            <Avatar sx={{ bgcolor: "#9c690a" }}>
+            <Avatar sx={{ bgcolor: "#9c690a" ,fontWeight:'bold'}}>
                  A
             </Avatar>
 

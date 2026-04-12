@@ -54,7 +54,11 @@ const Home = () => {
         }
       )
   
-      setMessage(`${info.name} added to cart`)
+      setMessage(`${info.name} added to cart`);
+
+setTimeout(() => {
+  setMessage("");
+}, 2000);
       setAddedId(prev => prev.includes(info._id)? prev : [...prev,info._id])
       
       
@@ -109,11 +113,13 @@ const Home = () => {
                <hr />
       <Swiper/>
 
-      <motion.div
-                                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    transition={{ duration: 0.8, ease: "easeOut" }}
-                        >
+     <motion.div
+                     
+                   initial={{ opacity: 0, y: 50 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   transition={{ duration: 1.2}}
+                   viewport={{ once: true, amount: 0.2 }}
+                               >
       <div className='heroshop'>
             {message && (
               <div className='toast'>

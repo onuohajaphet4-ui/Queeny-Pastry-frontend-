@@ -10,33 +10,42 @@ import {
 const Notification = () => {
   const [notifications, setNotifications] = useState([]);
   const [loading , setLoading] = useState(true)
-m
-  const fetchNotifications = async () => {
-    try {
-      const token = localStorage.getItem("token");
 
-      const res = await axios.get(
-        "https://queeny-pastry.onrender.com/api/notisfication",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      setNotifications(res.data);
-    } catch (error) {
-      console.error(error);
+ const fetchNotifications = async () => {
+      try {
+        const token = localStorage.getItem("token");
+  
+        const res = await axios.get(
+          "https://queeny-pastry.onrender.com/api/notisfication",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+  
+        setNotifications(res.data);
+        console.log(res.data)
+      } catch (error) {
+        console.error(error);
+      }finally {
+      setLoading(false);
     }
-  };
+    };
+  
+    useEffect(() => {
+      fetchNotifications();
+    }, []);
 
-  useEffect(() => {
-    fetchNotifications();
-  }, []);
+    
 
-  if (loading) return <CircularProgress  sx={{
-           margin : '15% 50%', color:'red'
-      }}  />
+   if (loading) {
+    return (
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "20%" }}>
+        <CircularProgress color="error" />
+      </div>
+    );
+  }
   
 
   return (

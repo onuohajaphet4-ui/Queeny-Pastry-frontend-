@@ -75,7 +75,7 @@ const Login = () => {
        <motion.div
                initial={{ opacity: 0, y: 30, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
       >
 
 
@@ -208,7 +208,7 @@ const Login = () => {
         <p style={{textAlign:'center', paddingTop:'10px'}}>OR</p>
 
         <Button onClick={() =>{
-          window.location.href="https://yati-perfume-backend.onrender.com/auth/google"
+          window.location.href="https://queeny-pastry.onrender.com/auth/google"
         }}
          sx={{
             py: 1.5,

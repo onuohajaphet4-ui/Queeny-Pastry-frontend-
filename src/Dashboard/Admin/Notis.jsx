@@ -47,7 +47,7 @@ const CreateNotification = () => {
         const token = localStorage.getItem("token");
   
         const res = await axios.get(
-          "https://queeny-pastry.onrender.com/api/notisfication",
+          "http://localhost:3000/api/notisfication",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -56,6 +56,7 @@ const CreateNotification = () => {
         );
   
         setNotifications(res.data);
+        console.log(res.data)
       } catch (error) {
         console.error(error);
       }

@@ -61,7 +61,11 @@ const Home = () => {
       }
     )
 
-    setMessage(`${info.name} added to cart`)
+    setMessage(`${info.name} added to cart`);
+
+setTimeout(() => {
+  setMessage("");
+}, 2000);
     setAddedId(prev => prev.includes(info._id)? prev : [...prev,info._id])
     
   } catch (error) {
@@ -111,9 +115,13 @@ const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
     b.name.toLowerCase().includes(search)
   );
 
-     if (loading) return <CircularProgress  sx={{
-         margin : '15% 50%', color:'red'
-    }}  />
+     if (loading) {
+  return (
+    <div style={{ display: "flex", justifyContent: "center", marginTop: "20%" }}>
+      <CircularProgress color="error" />
+    </div>
+  );
+}
 
 
   return (
@@ -179,14 +187,20 @@ const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
 
              </div>
 
-   <motion.div
-                           initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                              animate={{ opacity: 1, y: 0, scale: 1 }}
-                              transition={{ duration: 0.8, ease: "easeOut" }}
-                  >
+   
       <div className='product-p'>
         {filteredCards.map((info) => (
+          
         <div key ={info._id} className="product-card"> 
+        <motion.div
+                 key={info._id}
+              className="product-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2,ease: "easeOut"}}
+              viewport={{ once: true, amount: 0.2 }}
+                          >
+                  
           
           <div>
               <img src={info.imageUrl}  alt="" className='vin-im' />
@@ -209,14 +223,15 @@ const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
 
           <button onClick={() => handleFavorite(info._id)} className='btn-fave'><FiHeart className='de-icon' size={23} style={{marginLeft:'90%'}}/></button>
             
-        
+         </motion.div>
         </div>
+       
       ))} {filteredCards.length === 0 && (
         <p style={{ textAlign: "center", color: "gray" }}>No Product Found</p>
       )}
 
     </div>
-    </motion.div>
+    
 
 
     </div>

@@ -130,17 +130,12 @@ const Smallcart = () => {
     {cart.map((item) => (
       <div key={item._id} className="cart-item">
         
-
+       
         <div className="div">
           
             <img src={item.productId?.imageUrl} alt="" />
             <h4>{item.productId?.name}</h4>
-            <FiTrash2
-            onClick={() => deleteCart(item._id)}
-            size={20}
-            color="red"
-            className="divvvv"
-          />
+           
 
          
         </div>
@@ -166,6 +161,12 @@ const Smallcart = () => {
 
           
         </div>
+         <FiTrash2
+            onClick={() => deleteCart(item._id)}
+            size={20}
+            color="red"
+             style={{marginLeft:'90%',marginBottom:'2%'}}
+          />
       </div>
 
       
