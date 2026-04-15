@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from '../../Component/Nav'
-import { FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
+import {Link}from 'react-router-dom'
+import { FaArrowLeft, FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
 
 export default function Orders() {
   const [orders, setOrders] = useState([]);

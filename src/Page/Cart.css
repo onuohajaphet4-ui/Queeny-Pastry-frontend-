@@ -49,11 +49,17 @@
     margin: 3% 5%;
 }
 
+.or{
+        text-align: center;
+        margin: 5px 0px;
+        font-weight: bold;
+    }
+
 .check{
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     padding: 25px;
     border-radius: 10px;
-    height: 53vh;
+    height: 75vh;
     
 
     .fo{
@@ -62,6 +68,8 @@
         margin-bottom: 30px;
         
     }
+
+    
 
     button{
         width: 100%;
@@ -136,6 +144,12 @@
 
 }
 @media(max-width:600px){
+
+    .or{
+        text-align: center;
+        margin: 0px 0px;
+        font-weight: bold;
+    }
 
     .emptyy{
     align-items: center;

@@ -2,7 +2,7 @@
 import Nav from '../Component/Nav'
 import './Home.css'
 import logo from '../assets/logo.jpg'
-import { FaArrowRight, FaBell,FaSearch  } from "react-icons/fa";
+import { FaArrowRight, FaBell,FaSearch, FaWhatsapp  } from "react-icons/fa";
 import { FaBagShopping } from 'react-icons/fa6';
 import Swiper from '../Component/Swiper'
 import Heroshop from '../Component/Hero-shop'
@@ -99,17 +99,6 @@ setTimeout(() => {
         </div>
       </div>
 
-     
-               <div className="input-wrapperr">
-                         <FaSearch  onChange={handleSearch} style={{marginTop:'px', color:'rgb(51, 47, 47)',marginRight:'10px'}}  className='input-iccon'/>
-                         <input
-                       className="bran-input"
-                       type="text"
-                       placeholder="Search 'Cakes', 'pastries, 'small chops', 'snacks'........"
-                       
-                     />
-                        </div>
-
                <hr />
       <Swiper/>
 
@@ -165,7 +154,11 @@ setTimeout(() => {
    
           
          
-      
+      <div className="iconic">
+                       <a href="https://wa.me/2347074293026"><FaWhatsapp color='green' size={35}/></a>
+                       <hr />
+                        <a href="tel:=08145990289"><ion-icon name="call-outline" style={{color:'blue' }}></ion-icon></a>
+         </div>
     </div>
   )
 }

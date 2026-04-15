@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom'
 
 import Quickstat from '../Component/Quickstat'
 import { useNavigate } from "react-router-dom"
+import { FaWhatsapp } from 'react-icons/fa'
 
 const Admin = () => {
   const [user , setUser] = useState(null)
@@ -118,6 +119,11 @@ return (
     
     </div>
     
+    <div className="iconic">
+                           <a href="https://wa.me/2347074293026"><FaWhatsapp color='green' size={35}/></a>
+                           <hr />
+                            <a href="tel:=08145990289"><ion-icon name="call-outline" style={{color:'blue' }}></ion-icon></a>
+             </div>
     </div>
   )
 }

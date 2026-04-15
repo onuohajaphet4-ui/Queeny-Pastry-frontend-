@@ -3,7 +3,7 @@ import axios from "axios";
 import "./Order.css";
 import { FaShoppingBag, FaShoppingBasket } from "react-icons/fa";
 import { FiTrash2 } from "react-icons/fi";
-
+import{Link} from 'react-router-dom'
 export default function Orders() {
   const [orders, setOrders] = useState([]);
   const [filter, setFilter] = useState("all");
@@ -151,11 +151,10 @@ export default function Orders() {
             No Order Yet
           </h3>
 
-          <p>Looks like you haven't ordered anything yet</p>
+          
 
 
-          <Link to='/product' style={{textDecoration:'none'}}><button><FaArrowLeft/>Browse Menu</button></Link>
-        </div>
+          </div>
       ) : (
         filteredOrders.map((order) => (
           <div key={order._id} className="order-card">

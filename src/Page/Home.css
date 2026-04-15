@@ -27,8 +27,7 @@
 
 .bran-input {
   display: none;
-  width: 203%;
-  margin:2%;
+  width: 220%;
   padding: 13px;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -37,7 +36,7 @@
   outline:none; 
   box-shadow: 1px 2px 6px rgba(7, 7, 7, 0.363);
   margin-bottom: 5%;
-  margin-left: 9%;
+  margin-left: 0%;
    padding-left: 50px;
 
 }
@@ -232,6 +231,36 @@
   border-radius: 50%;
   }
 }
+
+.iconic{
+    text-align: center;
+    top: 50%;
+    right: 3px;
+    transform: translateY(-50%);
+    background-color:white;
+    box-shadow:0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius:7px 0 0 7px    ;
+    position: fixed;
+    z-index: 1000;
+    padding: 10px;
+}
+.iconic a{
+    text-decoration: none;
+    display: block;
+   
+}
+.iconic ion-icon{
+    
+    color:black;
+    font-size: 30px;
+    padding: 7px;
+    transition: 0.3s;
+}
+
+
+.iconic ion-icon:hover{
+    color: rgb(101, 101, 241);
+}
 @media(max-width:600px){
   .input-wrapper{
     display: none;
@@ -275,7 +304,7 @@
 
 .bran-input{
   display: block;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 .admin-bran-input{

@@ -9,46 +9,14 @@ import { FaAddressBook } from "react-icons/fa6";
 export default function Delivery() {
 
   const navigate = useNavigate();
+ const [form, setForm] = useState({ name: "", phone: "", address: "", email: "" });
+const handleChange = (e) => { setForm({ ...form, [e.target.name]: e.target.value }); };
+const handleSubmit = (e) => { e.preventDefault();
 
-  const [form, setForm] = useState({
-    name: "",
-    phone: "",
-    address: "",
-    email: ""
-  });
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-    // check if email exists
-    const res = await axios.post("https://queeny-pastry.onrender.com/api/user/check-email", {
-      email: form.email
-    });
-
-    if (!res.data.exists) {
-      alert("This email is not registered. Please use your account email.");
-      return;
-    }
-
-    // save delivery info
-    localStorage.setItem("deliveryInfo", JSON.stringify(form));
-
-    navigate("/pay");
-
-  } catch (err) {
-    console.log(err);
-    alert("Server error. Try again.");
-  }
+if (!form.name || !form.phone || !form.address || !form.email) { alert("Please fill all fields"); return; }
+ localStorage.setItem("deliveryInfo", JSON.stringify(form)); 
+  navigate("/pay"); 
 };
-
   return (
 
     <div className="info">

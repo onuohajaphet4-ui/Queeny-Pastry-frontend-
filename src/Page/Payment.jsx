@@ -14,6 +14,7 @@ export default function Payment() {
       try {
 
         const delivery = JSON.parse(localStorage.getItem("deliveryInfo"));
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
         if (!delivery) {
           alert("Fill delivery form first");
@@ -21,35 +22,27 @@ export default function Payment() {
           return;
         }
 
-        const token = localStorage.getItem("token");
+        if (cartItems.length === 0) {
+          alert("Cart is empty");
+          window.location.href = "/cart";
+          return;
+        }
+        const token = localStorage.getItem("token")
 
-const cartRes = await axios.get(
-  "https://queeny-pastry.onrender.com/api/cart",
-  {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }
-);
-        const cartItems = cartRes.data;
-         
-       
         const res = await axios.post(
           "https://queeny-pastry.onrender.com/api/payment/initialize",
           {
             email: delivery.email,
             cartItems,
             delivery
-          },
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
+          },{
+               headers: {
+              "Authorization": `Bearer ${token}`
+             }
+            }
         );
 
-       console.log(localStorage.getItem("token"));
-
+        // 🔥 Redirect to Paystack
         window.location.href = res.data.authorization_url;
 
       } catch (error) {

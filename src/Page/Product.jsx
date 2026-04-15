@@ -2,7 +2,7 @@ import React , {useEffect, useState} from 'react'
 import './Product.css'
 import Nav from '../Component/Nav'
 import logo from '../assets/logo.jpg'
-import { FaBell,FaSearch,FaShoppingCart  } from "react-icons/fa";
+import { FaBell,FaSearch,FaShoppingCart,FaWhatsapp  } from "react-icons/fa";
 import { FaBagShopping } from 'react-icons/fa6';
 import Shopnav from '../Component/Shop-nav'
 import axios from 'axios'
@@ -38,41 +38,30 @@ const Home = () => {
       })
     }, [sort])
 
-  const addToCart = async (info) => {
+  const addToCart = (info) => {
+  let cart = JSON.parse(localStorage.getItem("cart")) || []
 
-    
-  const token = localStorage.getItem("token")
+  // check if item already exists
+  const existingItem = cart.find(item => item._id === info._id)
 
-  if (!token) {
-    alert("Please login to add items to favorite")
-    navigate("/log")
-    return
+  if (existingItem) {
+    existingItem.quantity += 1
+  } else {
+    cart.push({ ...info, quantity: 1 })
   }
 
-  try {
-    await axios.post("https://queeny-pastry.onrender.com/api/cart",
-      {
-         productId: info._id,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    )
+  localStorage.setItem("cart", JSON.stringify(cart))
 
-    setMessage(`${info.name} added to cart`);
+  setMessage(`${info.name} added to cart`)
 
-setTimeout(() => {
-  setMessage("");
-}, 2000);
-    setAddedId(prev => prev.includes(info._id)? prev : [...prev,info._id])
-    
-  } catch (error) {
-    console.log(error.response?.data || error.message)
-  }
-} 
+  setTimeout(() => {
+    setMessage("")
+  }, 2000)
 
+  setAddedId(prev =>
+    prev.includes(info._id) ? prev : [...prev, info._id]
+  )
+}
 //ADD to Fav
 
   const handleFavorite = async (productId) => {
@@ -198,7 +187,7 @@ const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
 
         <motion.div
          key={info._id}
-      className="product-card"
+      // className="product-card"  
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1.2,ease: "easeOut"}}
@@ -239,7 +228,11 @@ const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
      
     
 
-
+       <div className="iconic">
+                             <a href="https://wa.me/2347074293026"><FaWhatsapp color='green' size={35}/></a>
+                             <hr />
+                              <a href="tel:=08145990289"><ion-icon name="call-outline" style={{color:'blue' }}></ion-icon></a>
+               </div>
     </div>
   )
 }

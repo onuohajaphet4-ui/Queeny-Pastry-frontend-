@@ -44,7 +44,7 @@ const RegistrationScreen = () => {
         "https://queeny-pastry.onrender.com/api/user",
         formData
       );
-      alert("Registration successful!.");
+      
       navigate("/log");
       console.log(res.data);
     } catch (err) {

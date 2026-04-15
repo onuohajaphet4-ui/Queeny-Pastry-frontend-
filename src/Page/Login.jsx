@@ -16,6 +16,7 @@ import axios from "axios";
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import {FcGoogle} from "react-icons/fc"
+import { FaGoogle } from "react-icons/fa6";
 
 
 const Login = () => {
@@ -221,7 +222,7 @@ const Login = () => {
             backgroundColor: "black",
             "&:hover": { backgroundColor: "#9c690a" },
           }}>
-          <FcGoogle style={{paddingRight:'20px'}}/> with Google 
+          <FaGoogle color="green" style={{paddingRight:'20px'}}/> with Google 
         </Button>
 
 
