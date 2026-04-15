@@ -154,10 +154,10 @@ const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
       <h2 style={{textAlign:"center", marginBottom:'20px'}}>All</h2>
 
       <div className="input-wrapperr">
-                               <FaSearch  style={{marginTop:'px', color:'rgb(51, 47, 47)',marginRight:'10px'}}  className='input-iccon'/>
+                               <FaSearch  style={{marginTop:'px', color:'rgb(51, 47, 47)',marginRight:'10px'}}  className='product-input-iccon'/>
                                <input
                                onChange={handleSearch}
-                             className="bran-input"
+                             className="product-bran-input"
                              type="text"
                              placeholder="Search 'Cakes', 'pastries, 'small chops', 'snacks'........"
                            />

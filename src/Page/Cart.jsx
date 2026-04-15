@@ -254,21 +254,7 @@ const Cart = () => {
         </div>
       </div>
 
-      {/* FLOATING ICONS */}
-      <div className="iconic">
-        <a href="https://wa.me/2347074293026">
-          <FaWhatsapp color="green" size={35} />
-        </a>
-
-        <hr />
-
-        <a href="tel:08145990289">
-          <ion-icon
-            name="call-outline"
-            style={{ color: "blue" }}
-          ></ion-icon>
-        </a>
-      </div>
+      
     </div>
   );
 };

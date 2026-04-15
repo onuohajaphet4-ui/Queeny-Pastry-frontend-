@@ -7,72 +7,107 @@ import { FiLock, FiTrash2 } from "react-icons/fi";
 import './Cart.css'
 
 const Smallcart = () => {
-  const [cart, setCart] = useState([]); // MUST be array
-  const [loading, setLoading] = useState(true);
-
-  const navigate = useNavigate();
-
-  // Format price (₦1,200.00)
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat("en-NG", {
-      style: "currency",
-      currency: "NGN",
-    }).format(price);
-  };
-
-  // Fetch cart
+  const [cart, setCart] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    const navigate = useNavigate();
+  
+    
+    // FORMAT PRICE
+    
+    const formatPrice = (price) => {
+      return new Intl.NumberFormat("en-NG", {
+        style: "currency",
+        currency: "NGN",
+      }).format(price);
+    };
+  
+    
+    // LOAD CART FROM LOCAL STORAGE
+    
     useEffect(() => {
-    const fetchCart = () => {
-      try {
-        const storedCart = JSON.parse(localStorage.getItem("cart")) || []
-        setCart(storedCart)
-        console.log(storedCart)
-      } catch (error) {
-        console.error("Error loading cart:", error)
-        setCart([])
-      } finally {
-        setLoading(false)
-      }
+      const fetchCart = () => {
+        try {
+          const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+          setCart(storedCart);
+        } catch (error) {
+          console.error("Error loading cart:", error);
+          setCart([]);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchCart();
+    }, []);
+  
+    
+   //Delete
+    const deleteCart = (_id) => {
+      const confirmDelete = window.confirm(
+        "Are you sure you want to remove this product?"
+      );
+  
+      if (!confirmDelete) return;
+  
+      const updatedCart = cart.filter((item) => item._id !== _id);
+  
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    };
+  
+    
+    // CHANGE QUANTITY
+  
+    const changeQty = (id, type) => {
+      const updatedCart = cart.map((item) => {
+        if (item._id !== id) return item;
+  
+        let newQty =
+          type === "inc"
+            ? item.quantity + 1
+            : Math.max(1, item.quantity - 1);
+  
+        return { ...item, quantity: newQty };
+      });
+  
+      setCart(updatedCart);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    };
+  
+    // ===============================
+    // TOTAL
+    // ===============================
+    const totalAmount = cart.reduce((total, item) => {
+      return total + item.price * item.quantity;
+    }, 0);
+  
+    
+    const generateWhatsAppLink = () => {
+      const phone = "2347074293026";
+  
+      let message = "Hello Quenndy Pastry , I'd like to place an order:\n\n";
+  
+      cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} (x${item.quantity}) - ₦${
+          item.price * item.quantity
+        }\n`;
+      });
+  
+      message +=`\nSubtotal: ₦${totalAmount}\n`;
+      message += `Delivery Fee: ₦0\n`;
+      message += `Total: ₦${totalAmount}`;
+  
+      return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+      console.log(generateWhatsAppLink())
+    };
+  
+    
+    if (loading) {
+      return <h2>Loading cart...</h2>;
     }
   
-    fetchCart()
-  }, [])
-  
-    const deleteCart = (_id) => {
-    const confirm = window.confirm("Are you sure you want to remove this product?")
-    if (!confirm) return
-  
-    const updatedCart = cart.filter(item => item._id !== _id)
-  
-    setCart(updatedCart)
-    localStorage.setItem("cart", JSON.stringify(updatedCart))
-  }
-  
-  
-    // Calculate total
-   const totalAmount = cart.reduce((total, item) => {
-    return total + item.price * item.quantity;
-  }, 0);
-  
-   const changeQty = (id, type) => {
-    const updatedCart = cart.map(item => {
-      if (item._id !== id) return item
-  
-      let newQty =
-        type === "inc"
-          ? item.quantity + 1
-          : Math.max(1, item.quantity - 1)
-  
-      return { ...item, quantity: newQty }
-    })
-  
-    setCart(updatedCart)
-    localStorage.setItem("cart", JSON.stringify(updatedCart))
-  }
-  
-  if (loading) {
-    return <h2>Loading cart...</h2>;
-  }
   return (
     <div className='info'>
       <div className="in">
@@ -152,9 +187,18 @@ const Smallcart = () => {
                     or
         </div>
         
-                   <button>
-                    <a href="https://wa.me/2347074293026" style={{color:'inherit', textDecoration:'none'}}> <FaWhatsapp color="green" size={15}/> Order Via WhatsApp </a>
-                   </button>
+                   
+                                 <a
+                                   href={generateWhatsAppLink()}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   style={{ textDecoration: "none" }}
+                                 >
+                                   <button>
+                                     <FaWhatsapp color="green" size={15} /> Order Via WhatsApp
+                                   </button>
+                                 </a>
+                   
     </div>
 
   </div>

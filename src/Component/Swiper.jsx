@@ -77,11 +77,11 @@ const Hero = () => {
     <div className="slider-container">
 
              <div className="input-wrapperr">
-                                                 <FaSearch   style={{marginTop:'px', color:'rgb(51, 47, 47)',marginRight:'10px'}}  className='input-iccon'/>
+                                                 <FaSearch   style={{marginTop:'px', color:'rgb(51, 47, 47)',marginRight:'20px'}}  className='input-iccon'/>
                                                  <input
                                     type="text"
                                     className="bran-input"
-                                     placeholder="Search 'Cakes', 'pastries, 'small chops', 'snacks'........"
+                                    placeholder="Search 'Cakes', 'pastries, 'small chops', 'snacks'........"
                                     value={search}
                                     onChange={(e) => setSearch(e.target.value)}
                                   />
